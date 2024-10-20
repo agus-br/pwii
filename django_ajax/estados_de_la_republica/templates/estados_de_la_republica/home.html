@@ -1,0 +1,24 @@
+{% extends "estados_de_la_republica/base.html" %}
+
+{% block title %}Página Principal{% endblock %}
+
+{% block content %}
+    <h2>Selecciona un Estado</h2>
+    
+    <div>
+        <label for="estado-selector">Estado:</label>
+        <select id="estado-selector">
+            <option value="">-- Selecciona un Estado --</option>
+            {% for estado in estados %}
+                <option value="{{ estado.id }}">{{ estado.nombre }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    
+    <div id="municipios-container">
+        <h3>Municipios:</h3>
+        <ul id="municipios-list">
+            <!-- Aquí se llenarán los municipios mediante AJAX -->
+        </ul>
+    </div>
+{% endblock %}
